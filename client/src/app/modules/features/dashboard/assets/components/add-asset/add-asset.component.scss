@@ -1,0 +1,153 @@
+.popup_main_wrapper {
+    .heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h3 {
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.36px;
+        color: #333333;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .close_btn {
+        cursor: pointer;
+      }
+  
+    }
+  
+  }
+
+  .cards {
+    margin: 0 auto;
+    display: grid;
+    column-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .card1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row: 1 / span 2;
+  }
+  
+  .label {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #3C4043;
+    display: block;
+  
+  }
+  .btn_top {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .top_head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-bottom: 30px;
+  
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
+  
+    .uplaod_img_wrapper {
+      // width: 165px;
+      // height: 165px;
+      width: 277px;
+      height: 184px;
+  
+      @media (max-width: 480px) {
+        margin-bottom: 20px;
+      }
+  
+      .img_wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+      }
+  
+      .editicon {
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+  
+        .upload_input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+  
+      }
+    }
+  
+    .btn_primary {
+      width: fit-content;
+      padding: 0 20px;
+    }
+  }
+  
+  .deleteicon {
+    position: absolute;
+    bottom: 45px;
+    right: -17px;
+
+    background-color: #ED4C5C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  
+  .form_group mat-label {
+    font-size: 13px;
+    color: #333333;
+  }
+  
+  .mat-form-field {
+    margin-bottom: 0 !important;
+    width: 100%;
+  
+  }
+  
+  input {
+    color: black !important;
+  }
+  
+ 

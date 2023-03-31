@@ -1,0 +1,28 @@
+<div class="top">
+    <div class="left">
+        <div class="fieldInput">
+            <input class="form-input" [(ngModel)]="filterObject.search" type="text" placeholder="Search asset name" (keyup.enter)="search()">
+            <button type="submit" class="form-submit" (click)="search()"><mat-icon>search</mat-icon></button>
+        </div>
+    
+        <select class="fieldInput sort" [(ngModel)]="filterObject.sortBy" (change)="onSelectChange($event)">
+            <option value="createdAt" [defaultSelected]="true">Created At</option>
+            <option value="imageClickDate">Image click date</option>
+            <option value="name">Name</option>
+        </select>
+    </div>
+
+    <button mat-raised-button (click)="addAsset()">Add Asset</button>
+</div>
+
+<article class='gallery'>
+    <div *ngFor="let asset of assetList">
+        <div class="item" (click)="viewAsset(asset._id)">
+            <img [src]="asset?.image" alt="">
+        </div>
+    </div>
+
+    <div class="no-data" *ngIf="!assetList?.length">
+        No data found
+    </div>
+</article>

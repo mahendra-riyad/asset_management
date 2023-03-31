@@ -1,0 +1,37 @@
+/* Login */
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-info {
+    margin-bottom: 20px;
+}
+
+.login-error {
+    text-align: center;
+    color: #E91E63;
+}
+
+.login {
+    padding: 50px;
+    max-width: 500px;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.password {
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 20px;
+}
+

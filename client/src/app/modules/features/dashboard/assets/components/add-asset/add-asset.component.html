@@ -1,0 +1,87 @@
+<div [class.loader]="loading"></div>
+<div class="main_wrap">
+    <div class="popup_main_wrapper">
+        <div class="heading" mat-dialog-title>
+            <h3 class="title-text">
+                <p class="center">{{assetId ? 'Edit Asset' : 'Add Asset'}}</p>
+            </h3>
+            <div style="display: flex; align-items: center;">
+                <span class="close_btn" (click)="cancel()">
+                    <mat-icon>close</mat-icon>
+                </span>
+            </div>
+        </div>
+        <mat-dialog-content class="mat-typography">
+            <form [formGroup]="assetForm">
+                <div class="card card1">
+                    <div class="top_head">
+                        <div class="uplaod_img_wrapper">
+                            <figure class="img_wrapper">
+                                <img [src]="imageUrl || 'assets/images/space_placeholder.png'" alt="" />
+
+                                <span class="editicon">
+                                    <mat-icon>edit</mat-icon>
+                                    <input [accept]="imageFormats" (change)="onSelectProfilePic($event)" type="file"
+                                        class="upload_input" />
+                                </span>
+
+                                <span (click)="deleteProfilePic()" *ngIf="imageUrl && imageUrl != ''"
+                                    class="deleteicon">
+                                    <mat-icon>delete</mat-icon>
+                                </span>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <mat-label class="label">Name</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Enter image name" formControlName="name" />
+                        <mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="card">
+                    <mat-label class="label">Description</mat-label>
+                    <mat-form-field appearance="outline">
+                        <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"
+                            cdkAutosizeMaxRows="5" placeholder="Write something about image"
+                            formControlName="description"></textarea>
+                    </mat-form-field>
+                </div>
+
+                <div class="card">
+                    <mat-label>Date</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Image click date"
+                            formControlName="date" />
+                        <owl-date-time pickerType="calendar" #dt1></owl-date-time>
+                    </mat-form-field>
+                </div>
+
+                <div class="card">
+                    <mat-label class="label">Tags</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="e.g, landscape, nature" formControlName="tags" />
+                        <mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="card">
+                    <mat-label class="label">Location</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Add location" formControlName="location" />
+                        <mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-dialog-content>
+
+        <mat-dialog-actions align="center" class="btn_top">
+            <button class="btn_primary" style="background: #ED4C5C;" (click)="cancel()">Cancel</button>
+
+            <button class="btn_primary" (click)="addAsset()">Submit</button>
+        </mat-dialog-actions>
+    </div>

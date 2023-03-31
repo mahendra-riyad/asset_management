@@ -1,0 +1,22 @@
+<div class="popup-wrapper">
+  <span class="close_btn" (click)="onNoClick()">
+    <mat-icon>close</mat-icon>
+  </span>
+
+  <mat-dialog-content>
+    <div class="modal_message">
+      <p>{{modalData?.message}} </p>
+
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="btn-wrapper">
+      <button mat-stroked-button (click)="onNoClick()" class="modal-btn no">
+        {{modalData?.cancelButtonText}}
+      </button>
+      <button mat-raised-button class="btn_primary" (click)="confirm()" cdkFocusInitial>
+        {{modalData?.confirmButtonText}}
+      </button>
+    </div>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,239 @@
+@import "~@danielmoncada/angular-datetime-picker/assets/style/picker.min.css"; // to get the date time picker
+
+
+:root {
+    --blue: blueviolet;
+    --dark-blue: #39006e;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--black);
+    font-size: inherit;
+}
+
+a:hover {
+    color: var(--black);
+}
+
+/* Spacing */
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mt-20 {
+    margin-top: 20px !important;
+}
+
+.mt-40 {
+    margin-top: 40px !important;
+}
+
+/* Typography */
+
+h1 {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+h3 {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Table */
+
+.mat-elevation-z8 button {
+    margin-left: 5px !important;
+}
+
+table {
+    width: 100%;
+}
+
+/* Gener */
+
+.mat-dialog-actions {
+    margin-bottom: 0 !important;
+    margin-top: 10px !important;
+}
+
+/* Layout */
+
+.container {
+    max-width: 900px;
+    margin: 1% auto;
+    width: 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.controls {
+    margin-top: 20px !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.mat-expansion-panel-header-title {
+    width: 30% !important;
+}
+
+/* Form */
+
+.mat-form-field {
+    margin-right: 5px;
+}
+
+.mat-form-field-full {
+    width: 100%;
+}
+
+/* Loader */
+
+.loader {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.702);
+    z-index: 9999;
+}
+
+.loader:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    border-top-color: var(--blue);
+    animation: loading .8s linear infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_primary {
+    width: 150;
+    padding: 10px 40px;
+    font-size: 14px;
+
+    background-color: blueviolet;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    transition: .5s all ease-in;
+    cursor: pointer;
+}
+
+.btn_primary:hover {
+    background-color: #39006e;
+}
+
+
+
+.link {
+    text-decoration: underline !important;
+    color: blueviolet !important;
+    transition: .5s all ease-in !important;
+}
+
+.link:hover {
+    color: #39006e !important;
+}
+.heading {
+    font-size: 18px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+:host ::ng-deep {
+    .inner_content {
+      .form_group {
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+          background: #f5f6f8;
+          margin: 0px;
+          padding: 0px;
+        }
+  
+        .mat-input-element {
+          color: #000;
+          font-family: "lato";
+        }
+      }
+    }
+    .field {
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        background: #f5f6f8;
+  
+        border-radius: 9px;
+      }
+  
+      .mat-input-element {
+        color: #000;
+  
+        font-family: "lato";
+      }
+    }
+  
+  }
+
+  /* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: blueviolet; 
+}

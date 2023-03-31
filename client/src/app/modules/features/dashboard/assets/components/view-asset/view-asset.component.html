@@ -1,0 +1,45 @@
+<div class="main_wrap">
+    <div class="popup_main_wrapper">
+        <div class="heading" mat-dialog-title>
+            <h3 class="title-text">
+                <p class="center">Asset Detail</p>
+            </h3>
+            <div style="display: flex; align-items: center;">
+                <span class="close_btn" (click)="cancel()">
+                    <mat-icon>close</mat-icon>
+                </span>
+            </div>
+        </div>
+        <mat-dialog-content class="mat-typography">
+            <div class="card">
+
+                <div class="image">
+                    <img [src]="assetDetail?.image" alt="">
+                </div>
+
+                <div>
+                    <h1>{{assetDetail?.name}}</h1>
+
+                    <span>{{assetDetail?.description}}</span>
+
+                    <div class="location">
+                        <span class="loc-1"> <mat-icon class="icon"> location_on</mat-icon> {{assetDetail?.location}}</span>
+                        <span>{{assetDetail?.date | date}}</span>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag"  *ngFor="let tag of assetDetail?.tags">
+                            {{tag}}
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            
+        </mat-dialog-content>
+
+        <mat-dialog-actions align="center" class="btn_top">
+            <button class="btn_primary" style="background: #ED4C5C;" (click)="deleteAsset(assetDetail?._id)">Delete</button>
+            <button class="btn_primary" (click)="addAsset(assetDetail?._id)">Edit</button>
+        </mat-dialog-actions>
+    </div>

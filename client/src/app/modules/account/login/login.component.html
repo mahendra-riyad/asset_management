@@ -1,0 +1,34 @@
+<div [class.loader]="loading"></div>
+
+<div class="login-wrapper">
+    <mat-card class="login">
+        <div class="heading">
+            Login
+        </div>
+        <div *ngIf="error" class="login-error">{{errorMessage}}</div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" ngNativeValidate>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input name="email" type="email" matInput formControlName="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                <button class="password" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <div class="btn">
+                <button mat-raised-button type="submit" class="btn_primary">Login</button>
+            </div>
+        </form>
+
+        <div class="footer">
+           Don't have account? please <a [routerLink]="['SIGNUP'|absolutePath]" class="link">Sign-Up</a>
+        </div>
+    </mat-card>
+</div>
